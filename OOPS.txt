@@ -1,0 +1,231 @@
+OOPS
+
+Object : Objects are real world entities.
+
+The below code creates a class called Mobile without any attributes or behavior.
+
+class Mobile:
+    pass
+
+Object Creation :
+
+Mobile()
+
+*variables that are used to access objects are called reference variables .
+
+eg :
+
+mob1=Mobile()
+mob2=Mobile()
+
+**
+If two objects look the same and have the same values, we can't treat it as a single object.
+
+Each object is unique and independent of other object. Just like every person, including twins, are unique, so is every object
+
+*
+
+If we try to access a non-existing attribute, we will get an Attribute Error. 
+
+**
+Attributes can be added to a class through a special function called __init__().
+
+If a constructor takes parameters and if we invoke it with a different number of parameters,
+the error message will indicate how many parameters were missed out or exceeded.
+
+**
+
+Numbers, Strings, List, Set, Dictionary, etc are all treated as objects in python.
+
+**
+
+A method must have at least one parameter : self.
+
+**
+the ability to use something without having to know the details of how it is working is called as abstraction.
+
+*
+class Customer:
+    def __init__(self):
+        cust_id = 100
+
+c1=Customer()
+print(c1.cust_id)
+
+Output():
+
+ERROR
+
+class Customer:
+    def __init__(self):
+        self.cust_id = 100
+
+c1=Customer()
+print(c1.cust_id)
+
+Output():
+
+100.
+
+**An object can have multiple reference variables.
+
+Assigning a new reference variable to an existing object does not create a new object
+
+We can create objects without reference variable as well
+
+Encapsulation :
+
+self.__wallet_balance += amount
+
+Adding a double underscore makes the attribute a private attribute.
+
+Private attributes are those which are accessible only inside the class.
+
+This method of restricting access to our data is called encapsulation.
+
+To have a error free way of accessing and updating private variables, we create specific methods for this.
+
+Those methods which are meant to set a value to a private variable are called setter methods
+
+and methods meant to access private variable values are called getter methods.
+
+**
+
+Setter methods are called as mutator methods.
+
+Getter methods are called accessor methods.
+
+
+**
+ if a method has both leading and trailing double underscores ( like __init__, __str__, etc)
+ it indicates that it is a special built-in method.
+
+**
+As per coding convention, we are not supposed to create our own methods 
+with both leading and trailing underscores.
+
+**
+An object without a reference variable cannot be used later.
+
+**
+mob1=Mobile(1000, "Apple")
+mob2=mob1
+
+same id
+
+**
+
+mob1=Mobile(1000, "Apple")
+mob2=Mobile(1000, "Apple")
+
+different id
+
+Pass by reference : Example
+
+class Mobile:
+    def __init__(self, price, brand):
+        self.price = price
+        self.brand = brand
+
+def change_price(mobile_obj):
+    mobile_obj.price = 3000
+
+mob1=Mobile(1000, "Apple")
+change_price(mob1)
+print (mob1.price)
+
+**
+Variables without self are local cannot be accessed outside the init
+
+ STATIC :
+
+static attribute :
+
+We can create shared attributes by placing them directly inside the class and not inside the constructor.
+
+And they are accessed using class name.
+
+static methods :
+
+Static methods are those methods which can be accessed without an object.
+They are accessed using the class name.
+
+-->There are two rules in creating such static methods:
+
+* The methods should not have self
+* @staticmethod must be written on top of it.
+
+OOPS relationships :
+
+1.Inheritance
+
+When one object is a type of another object.
+
+eg:
+Mobile is a Product
+
+2.Aggregation:
+
+When one object owns another object, 
+but they both have independent life cycle.
+
+keyword : 'has a' relationship.
+
+reprsentation :
+
+Diamond symbol.
+
+ex :
+Customer has an Address. Even if the Customer is no more, there may be other customers in that address.
+ So Address continues to exist even after a customer is no more.
+
+3.Composition :
+
+When one object owns another object, but they both have same life cycle.
+
+ex :
+
+College has a department. If the college closes, the department is also closed.
+
+INHERITANCE
+
+When a class inherits from another class, 
+then those classes are said to have an inheritance relationship.
+
+ Inheritance is also called as "is-A" relationship.
+
+There are three main advantages of inheritance:
+
+We can keep common properties in a single place.
+Thus any changes needs to be made need not be repeated.
+
+Inheritance encourages code reuse thus saving us time.
+
+If we want to add a new type of phone later on,
+ we can simply inherit the Phone class instead of writing it from scratch.
+
+From the code perspective, a child class inherits :
+
+1.Constructor
+2.Non-private attributes
+3.Non-private methods
+
+private variables also get inherited in Python. 
+
+ A child class can access everything a parent has,
+ but a parent class cannot access anything from the child class.
+
+METHOD OVERIDNG (POLYMORPHISM)
+
+To invoke anything belonging to the parent class, 
+the child class needs to use the super() function
+
+Even though the child class may override the methods of the parent class, it might still decide
+to use the parent class overridden method. To invoke anything belonging to the parent class, the child class needs to use the super() function
+
+
+
+
+
+
+
